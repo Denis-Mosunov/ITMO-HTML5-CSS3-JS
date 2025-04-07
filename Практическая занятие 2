@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laba-2-1.html</title>
+    <style>
+        img {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Кликните на изображение, чтобы изменить его размер</h1>
+    <img src="apple.jpg" alt="Пример изображения" id="resizableImage" width="300">
+
+    <script>
+        const image = document.getElementById('resizableImage');
+        let isEnlarged = false;
+
+        image.addEventListener('click', function() {
+            if (isEnlarged) {
+                this.style.transform = 'scale(1)';
+            } else {
+                this.style.transform = 'scale(2)';
+            }
+            isEnlarged = !isEnlarged;
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laba-2-2.html</title>
+    <style>
+        #change {
+            font-size: 16px;
+            color: black;
+            text-decoration: none;
+            font-weight: normal;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>Наведите курсор</h1>
+    
+    <p id="change">текст изменит свой стиль при наведении на ссылку.</p>
+    
+    <a href="#" id="styleChanger">Изменить стиль текста</a>
+
+    <script>
+        function ChangeStyle() {
+            const element = document.getElementById('change');
+            element.style.color = 'red';
+            element.style.fontSize = '24px';
+            element.style.textDecoration = 'underline';
+            element.style.fontWeight = 'bold';
+        }
+
+        document.getElementById('styleChanger').addEventListener('mouseover', ChangeStyle);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laba-2-2.html</title>
+</head>
+<body>
+    <h1>Открытие нового окна браузера</h1>
+    
+    <a href="#" id="newWindowLink">Новое окно</a>
+
+    <script>
+        document.getElementById('newWindowLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const windowFeatures = 'width=300,height=400,' +
+                                  'menubar=yes,' +
+                                  'toolbar=yes,' +
+                                  'location=yes,' +
+                                  'resizable=yes,' +
+                                  'status=yes';
+            
+            window.open('about:blank', 'newWindow', windowFeatures);
+        });
+    </script>
+</body>
+</html>
