@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Phone Book (sessionStorage)</title>
+  <title>Phone Book</title>
 </head>
 <body>
-  <h2>Phone Book (sessionStorage)</h2>
+  <h2>Phone Book</h2>
   <input type="text" id="name" placeholder="Name">
   <input type="text" id="phone" placeholder="Phone">
   <button onclick="addContact()">Add</button>
@@ -40,7 +40,6 @@
       sessionStorage.setItem("contacts", JSON.stringify(contacts));
       loadContacts();
     }
-
     loadContacts();
   </script>
 </body>
