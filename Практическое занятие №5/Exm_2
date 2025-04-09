@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Телефонная книжка (localStorage)</title>
+    <title>Phonebook (localStorage)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,32 +42,32 @@
     </style>
 </head>
 <body>
-    <h2>Телефонная книжка</h2>
+    <h2>Phonebook</h2>
     <div class="form-group">
-        <label for="phone">Телефон:</label>
-        <input type="text" id="phone" placeholder="Введите телефон">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" placeholder="Enter phone number">
     </div>
     <div class="form-group">
-        <label for="name">Имя:</label>
-        <input type="text" id="name" placeholder="Введите имя">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter name">
     </div>
-    <button onclick="addContact()">Добавить</button>
-    <button onclick="clearContacts()">Очистить все</button>
+    <button onclick="addContact()">Add</button>
+    <button onclick="clearContacts()">Clear All</button>
     
-    <h3>Контакты:</h3>
+    <h3>Contacts:</h3>
     <table id="contactsTable">
         <thead>
             <tr>
-                <th>Телефон</th>
-                <th>Имя</th>
-                <th>Действие</th>
+                <th>Phone</th>
+                <th>Name</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody id="contactsList"></tbody>
     </table>
 
     <script>
-        // Загрузка контактов при открытии страницы
+        // Load contacts when the page opens
         document.addEventListener('DOMContentLoaded', loadContacts);
         
         function loadContacts() {
@@ -80,7 +80,7 @@
                 row.innerHTML = `
                     <td>${contact.phone}</td>
                     <td>${contact.name}</td>
-                    <td><button onclick="deleteContact(${index})">Удалить</button></td>
+                    <td><button onclick="deleteContact(${index})">Delete</button></td>
                 `;
                 contactsList.appendChild(row);
             });
@@ -91,7 +91,7 @@
             const name = document.getElementById('name').value.trim();
             
             if (!phone || !name) {
-                alert('Пожалуйста, заполните оба поля');
+                alert('Please fill in both fields');
                 return;
             }
             
@@ -113,7 +113,7 @@
         }
         
         function clearContacts() {
-            if (confirm('Вы уверены, что хотите удалить все контакты?')) {
+            if (confirm('Are you sure you want to delete all contacts?')) {
                 localStorage.removeItem('phonebook');
                 loadContacts();
             }
