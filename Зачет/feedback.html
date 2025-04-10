@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обратная связь</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>...</header>
 
+    <main>
+        <h2>Оставьте отзыв</h2>
+        <form id="feedback-form">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="message">Сообщение:</label>
+            <textarea id="message" rows="5" required></textarea>
+
+            <label for="rating">Оценка:</label>
+            <select id="rating">
+                <option value="5">Отлично</option>
+                <option value="4">Хорошо</option>
+                <option value="3">Удовлетворительно</option>
+            </select>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </main>
+
+    <footer>...</footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
