@@ -1,0 +1,28 @@
+<form id="feedback-form">
+    <!-- 1. Поле для email с валидацией -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    
+    <!-- 2. Поле для даты -->
+    <label for="visit-date">Дата посещения:</label>
+    <input type="date" id="visit-date">
+    
+    <!-- 3. Ползунок для оценки -->
+    <label for="rating">Оценка (1-10):</label>
+    <input type="range" id="rating" min="1" max="10">
+    
+    <!-- 4. Цветовая палитра -->
+    <label for="fav-color">Любимый цвет:</label>
+    <input type="color" id="fav-color">
+    
+    <!-- 5. Выпадающий список с поиском -->
+    <label for="fav-dish">Любимое блюдо:</label>
+    <input list="dishes" id="fav-dish">
+    <datalist id="dishes">
+        <option value="Борщ">
+        <option value="Пельмени">
+        <option value="Оливье">
+    </datalist>
+    
+    <button type="submit">Отправить</button>
+</form>
