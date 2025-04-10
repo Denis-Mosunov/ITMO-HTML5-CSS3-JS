@@ -1,0 +1,32 @@
+/* 1. Градиент */
+header {
+    background: linear-gradient(to right, #ff0000, #800000);
+}
+
+/* 2. Тень текста */
+h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 3. Скругленные углы */
+button {
+    border-radius: 15px;
+}
+
+/* 4. Анимация */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.logo {
+    animation: pulse 2s infinite;
+}
+
+/* 5. Медиа-запросы */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+}
