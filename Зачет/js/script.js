@@ -55,3 +55,15 @@ function toggleTheme() {
 if (localStorage.getItem('theme') === 'dark') {
   document.body.classList.add('dark-theme');
 }
+// Звуки при наведении на рецепты
+document.addEventListener('DOMContentLoaded', function() {
+  const recipeCards = document.querySelectorAll('.recipe-card');
+  
+  recipeCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const sound = new Audio('media/cooking-sound.mp3');
+      sound.volume = 0.3; // Уменьшаем громкость
+      sound.play();
+    });
+  });
+});
